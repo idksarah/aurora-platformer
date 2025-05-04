@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbs2wq7qi2v51"]
+
+[ext_resource type="Texture2D" uid="uid://byk6oatlai0ms" path="res://Texture/sun.png" id="1_2ojw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8doef"]
+size = Vector2(30, 28)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sun" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_2ojw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8doef")

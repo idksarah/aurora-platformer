@@ -60,4 +60,4 @@ ui_down={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.508315, 0.554092, 0.37747, 1)
+environment/defaults/default_clear_color=Color(0.115101, 0.127043, 0.131323, 1)
