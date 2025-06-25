@@ -1,20 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr32vjtcsf4dv"]
+[gd_scene load_steps=10 format=3 uid="uid://cr32vjtcsf4dv"]
 
-[ext_resource type="Script" uid="uid://dqapkf1tf3htp" path="res://player.gd" id="1_g3vah"]
-[ext_resource type="Texture2D" uid="uid://c25jcdl13tio5" path="res://icon.svg" id="2_pmnv2"]
+[ext_resource type="Script" path="res://player.gd" id="1_g3vah"]
+[ext_resource type="Texture2D" uid="uid://bd1dl5cvb5o1f" path="res://Texture/run.png" id="2_qp4dn"]
+[ext_resource type="Texture2D" uid="uid://co20pkhbboc2y" path="res://Texture/idle.png" id="2_xe4te"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qwmf"]
 size = Vector2(62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8x47"]
+atlas = ExtResource("2_xe4te")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqyb0"]
+atlas = ExtResource("2_xe4te")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uks4"]
+atlas = ExtResource("2_qp4dn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8u44"]
+atlas = ExtResource("2_qp4dn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7c8kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8x47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqyb0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uks4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8u44")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_g3vah")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(1, -2)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_pmnv2")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_7qwmf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -2)
+scale = Vector2(1.9375, 2)
+sprite_frames = SubResource("SpriteFrames_7c8kg")
+animation = &"idle"
+autoplay = "run"
