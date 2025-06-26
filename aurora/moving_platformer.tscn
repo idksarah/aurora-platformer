@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnf0jrprtw6u4" path="res://Texture/platformer.png" id="2_2a8rb"]
 
 [sub_resource type="Curve2D" id="Curve2D_0kg4c"]
+resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -3, -2, 0, 0, 0, 0, 137, -2)
 }

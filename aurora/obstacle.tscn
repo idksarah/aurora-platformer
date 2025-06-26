@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbs2wq7qi2v51"]
+[gd_scene load_steps=3 format=3 uid="uid://h7spkhldrrd7"]
 
-[ext_resource type="Texture2D" uid="uid://bn7ac0etkuxpo" path="res://Texture/obama.jpg" id="1_x5dxr"]
+[ext_resource type="Texture2D" uid="uid://bn7ac0etkuxpo" path="res://Texture/obama.jpg" id="1_3u5cx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8doef"]
 size = Vector2(30, 28)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Obstacle" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8doef")
@@ -13,4 +13,4 @@ shape = SubResource("RectangleShape2D_8doef")
 [node name="Obama" type="Sprite2D" parent="."]
 position = Vector2(-1.25, 0.75)
 scale = Vector2(0.0441576, 0.0204174)
-texture = ExtResource("1_x5dxr")
+texture = ExtResource("1_3u5cx")

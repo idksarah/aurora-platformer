@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://7esg7khvb8kd"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_movul"]
+[ext_resource type="Texture2D" uid="uid://c25jcdl13tio5" path="res://icon.svg" id="2_wk7ke"]
+[ext_resource type="Script" path="res://death.gd" id="3_kuo8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tfwg"]
+size = Vector2(123, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5vr7"]
+size = Vector2(121, 122)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgxkm"]
+radius = 335.789
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_movul")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("2_wk7ke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -2.5)
+shape = SubResource("RectangleShape2D_4tfwg")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_kuo8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, -5)
+shape = SubResource("RectangleShape2D_x5vr7")
+
+[node name="Visibility" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility"]
+position = Vector2(3, 2)
+shape = SubResource("CircleShape2D_vgxkm")
+
+[connection signal="body_entered" from="Visibility" to="." method="_on_visibility_body_entered"]
+[connection signal="body_exited" from="Visibility" to="." method="_on_visibility_body_exited"]
