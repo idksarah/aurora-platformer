@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=4 uid="uid://d17nmvbp4ayws"]
+
+[ext_resource type="PackedScene" uid="uid://d0m0lf3b1nh4w" path="res://tile.tscn" id="1_3s0gy"]
+[ext_resource type="PackedScene" uid="uid://cr32vjtcsf4dv" path="res://player.tscn" id="2_7xjia"]
+[ext_resource type="PackedScene" uid="uid://b2i7bbmg1e7ei" path="res://HUD.tscn" id="3_1fyhr"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_3s0gy")]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAABAAIAAAD//wEAAAABAAIAAAD+/wEAAAAAAAIAAAD//wAAAAAAAAAAAAABAAAAAAABAAEAAAACAAAAAAABAAEAAAADAAAAAAABAAEAAAAEAAAAAAACAAAAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAIAAAABAAEAAAABAAIAAAADAAIAAAAAAAIAAAAEAAIAAAABAAEAAAAEAAMAAAACAAIAAAAFAAIAAAABAAIAAAAGAAIAAAABAAIAAAAHAAIAAAABAAIAAAAIAAIAAAABAAIAAAAJAAIAAAABAAIAAAAKAAIAAAACAAIAAAAKAAEAAAACAAAAAAAJAAEAAAABAAAAAAAIAAEAAAABAAAAAAAHAAEAAAABAAAAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_7xjia")]
+
+[node name="HUD" parent="." instance=ExtResource("3_1fyhr")]

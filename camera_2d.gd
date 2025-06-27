@@ -2,13 +2,15 @@ extends Camera2D
 
 var player
 var zoom_multiplier = 1.7
-@onready var hud = $"../../HUD"
+var hud
+
 
 var last_x
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node("./..")
+	hud = get_node("./../../HUD")
 	last_x = player.global_position.x
 	zoom = zoom * zoom_multiplier
 
